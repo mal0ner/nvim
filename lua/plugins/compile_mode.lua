@@ -1,4 +1,7 @@
 return {
+  -- -------------------------------------------------
+  --               COMPILE-MODE                      |
+  -- -------------------------------------------------
   "ej-shafran/compile-mode.nvim",
   branch = "nightly",
   lazy = true,

@@ -45,6 +45,9 @@ local mode_letters = function()
 end
 
 return {
+  -- -------------------------------------------------
+  --               LUALINE                           |
+  -- -------------------------------------------------
   {
     "nvim-lualine/lualine.nvim",
     opts = {

@@ -1,4 +1,7 @@
 return {
+  -- -------------------------------------------------
+  --               COLORSCHEME                       |
+  -- -------------------------------------------------
   {
     "olivercederborg/poimandres.nvim",
     config = function(_)

@@ -1,14 +1,10 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
-local u = require("lazyvim.util")
--- Set winbar
--- vim.opt.winbar = "%=%m %f" -- sets curr filename to top left wind
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 100
 
 vim.opt.scrolloff = 10
-vim.opt.background = "light"
 
 -- if you want to set the val of opt.background
 -- dynamically based on time
@@ -25,11 +21,6 @@ vim.opt.background = "light"
 local float = { focusable = true, style = "minimal", border = "rounded" }
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float)
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
-
--- vim.cmd("hi NormalFloat = guibg=#ffffff")
--- vim.cmd("hi FloatBorder = guibg=#ffffff guifg=#F2E2C3")
--- For Neorg
--- vim.cmd("cnoreabbrev nw Neorg workspace")
 
 -- to replace indent-blankline
 -- vim.opt.list = true

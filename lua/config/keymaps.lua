@@ -6,8 +6,7 @@ vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize +2<CR>")
 
 -- better C-d and C-u, from ThePrimeagen baby
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-local f = function(lhs, rhs, opts) end
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz") -- this is broken for some reason?
 
 -- cycle through windows with TAB in normal mode, thanks reddit
 vim.keymap.set("n", "<TAB>", "<C-w>w")
@@ -28,9 +27,6 @@ end, { desc = "Query StackOverflow (tmux)" })
 vim.keymap.set("n", "<leader>fs", function()
   require("luasnip.loaders").edit_snippet_files()
 end, { desc = "Find Snippets" })
-
--- Telescope file_browser
-vim.keymap.set("n", "<leader>.", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file browser" })
 
 -- Diagnostics
 local enabled = false

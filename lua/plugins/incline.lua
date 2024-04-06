@@ -1,4 +1,7 @@
 return {
+  -- -------------------------------------------------
+  --               INCLINE                           |
+  -- -------------------------------------------------
   "b0o/incline.nvim",
   event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },

@@ -5,6 +5,9 @@ wk.register({
 }, { prefix = "<leader>" })
 
 return {
+  -- -------------------------------------------------
+  --               OBSIDIAN                          |
+  -- -------------------------------------------------
   "epwalsh/obsidian.nvim",
   version = "*",
   -- lazy = true,
