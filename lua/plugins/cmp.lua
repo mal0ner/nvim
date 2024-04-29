@@ -27,6 +27,7 @@ return {
         -- },
         -- preselect = cmp.PreselectMode.None,
         completion = {
+          -- autocomplete = false,
           completeopt = "menu,menuone",
         },
         snippet = {
@@ -46,15 +47,16 @@ return {
         },
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-n>"] = function(fallback)
+            if cmp.visible() then
+              cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })(fallback)
+            else
+              cmp.mapping.complete()(fallback)
+            end
+          end,
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-Space>"] = cmp.mapping.complete(),
           -- source: https://www.reddit.com/r/neovim/comments/que9ey/tab_for_completion_and_snippets/
           ["<Tab>"] = cmp.mapping(function()
-            --[[ if luasnip.expandable() then
-              luasnip.expand()
-            elseif luasnip.jumpable(1) then
-              luasnip.jump(1) ]]
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             elseif vim.api.nvim_get_mode().mode == "i" then
@@ -67,11 +69,9 @@ return {
         sources = cmp.config.sources({
           { name = "luasnip", priority = 40 },
           { name = "nvim_lsp" },
-          -- { name = "neorg" },
           { name = "path" },
         }, { { name = "buffer", keyword_length = 5 } }),
-        -- sort the cmp menu options based on a number of metrics
-        -- in this order of priority
+        -- sort the cmp menu options based on a number of metrics in this order of priority
         -- source: https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
         sorting = {
           comparators = {

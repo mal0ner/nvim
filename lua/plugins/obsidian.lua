@@ -23,6 +23,9 @@ return {
         path = "~/Documents/notes/",
       },
     },
+    daily_notes = {
+      folder = "05-daily",
+    },
     picker = {
       name = "telescope.nvim",
     },
@@ -41,6 +44,10 @@ return {
         end
       end
       return tostring(os.time()) .. "-" .. suffix
+    end,
+    ---@param url string
+    follow_url_func = function(url)
+      vim.fn.jobstart({ "open", url })
     end,
   },
   keys = {

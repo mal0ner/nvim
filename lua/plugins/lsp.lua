@@ -7,7 +7,7 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      inlay_hints = { enabled = true },
+      -- inlay_hints = true,
       servers = {
         omnisharp = {},
         pyright = {},

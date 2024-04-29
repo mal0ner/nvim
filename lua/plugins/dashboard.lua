@@ -252,7 +252,7 @@ return {
     "nvimdev/dashboard-nvim",
     opts = {
       config = {
-        header = vim.split(bread, "\n"),
+        header = vim.split(wise_cat, "\n"),
         -- stylua: ignore
         center = {
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = "󰞦", key = "r" },

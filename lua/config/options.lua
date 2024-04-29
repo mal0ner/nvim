@@ -13,7 +13,7 @@ vim.opt.scrolloff = 10
 
 -- vim.opt.pumblend = 0
 -- Uncomment to change cursor to block in all modes
--- vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c-i:block"
 -- set line number highlighting off
 -- vim.cmd("hi! LineNr guibg=none")
 
