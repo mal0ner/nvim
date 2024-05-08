@@ -36,8 +36,9 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered({ side_padding = 0 }),
-          documentation = cmp.config.window.bordered({ side_padding = 0 }),
+          -- completion = cmp.config.window.bordered({ side_padding = 0 }),
+          -- documentation = cmp.config.window.bordered({ side_padding = 0 }),
+          documentation = false,
         },
         -- This makes the completion window follow the cursor, similar to the default behaviour
         -- in editors like vs-code. Looks a bit cleaner in my opinion.
@@ -65,12 +66,19 @@ return {
               vim.cmd("<Tab>")
             end
           end, { "i", "s" }),
+          -- ["<Tab>"] = cmp.mapping(function()
+          --   if vim.api.nvim_get_mode().mode == "i" then
+          --     tabout.tabout()
+          --   else
+          --     vim.cmd("<Tab>")
+          --   end
+          -- end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          { name = "luasnip", priority = 40 },
+          -- { name = "luasnip", priority = 40 },
           { name = "nvim_lsp" },
           { name = "path" },
-        }, { { name = "buffer", keyword_length = 5 } }),
+        }),
         -- sort the cmp menu options based on a number of metrics in this order of priority
         -- source: https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
         sorting = {
@@ -166,7 +174,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
+        -- require("luasnip.loaders.from_vscode").lazy_load()
         require("luasnip.loaders.from_lua").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets/" } })
       end,
     },

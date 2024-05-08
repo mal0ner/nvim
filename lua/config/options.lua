@@ -13,14 +13,14 @@ vim.opt.scrolloff = 10
 
 -- vim.opt.pumblend = 0
 -- Uncomment to change cursor to block in all modes
-vim.opt.guicursor = "n-v-c-i:block"
+-- vim.opt.guicursor = "n-v-c-i:block"
 -- set line number highlighting off
 -- vim.cmd("hi! LineNr guibg=none")
 
 -- add borders to lsp hover and signatureHelp
-local float = { focusable = true, style = "minimal", border = "rounded" }
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float)
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
+-- local float = { focusable = true, style = "minimal", border = "rounded" }
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float)
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
 
 -- to replace indent-blankline
 -- vim.opt.list = true

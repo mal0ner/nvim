@@ -28,26 +28,13 @@ return {
   --               LSP Diagnostic Text               |
   -- -------------------------------------------------
 
-  {
-    "dgagn/diagflow.nvim",
-    event = "LspAttach",
-    opts = {
-      format = function(diagnostic)
-        return "[LSP] " .. diagnostic.message
-      end,
-    },
-  },
-  -- -------------------------------------------------
-  --               GARBAGE-DAY                       |
-  --                                                 |
-  --               Restart idle LSP Servers          |
-  -- -------------------------------------------------
-  {
-    "zeioth/garbage-day.nvim",
-    dependencies = "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    opts = {
-      -- your options here
-    },
-  },
+  -- {
+  --   "dgagn/diagflow.nvim",
+  --   event = "LspAttach",
+  --   opts = {
+  --     format = function(diagnostic)
+  --       return "[LSP] " .. diagnostic.message
+  --     end,
+  --   },
+  -- },
 }
