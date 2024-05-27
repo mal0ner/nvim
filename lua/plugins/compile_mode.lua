@@ -4,7 +4,6 @@ return {
   -- -------------------------------------------------
   "ej-shafran/compile-mode.nvim",
   branch = "nightly",
-  lazy = true,
   cmd = "Recompile",
   -- or a specific version:
   -- tag = "v2.0.0"

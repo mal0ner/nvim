@@ -17,11 +17,9 @@ return {
         { open = "<", close = ">" },
       },
       exclude = {}, -- tabout will ignore these filetypes
-      after = { "luasnip" },
     },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
-      "L3MON4D3/LuaSnip",
     },
   },
 }

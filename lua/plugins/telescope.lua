@@ -8,20 +8,21 @@ return {
   -- -------------------------------------------------
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
+    opts = function(_, opts)
       -- set default picker theme to ivy for all pickers
-      defaults = require("telescope.themes").get_ivy({
+      opts.defaults = require("telescope.themes").get_ivy({
         layout_config = { height = 0.30 },
         results_title = "",
-      }),
-      pickers = {
+      })
+
+      opts.pickers = {
         find_files = make_picker_opts("[Find files] "),
         live_grep = make_picker_opts("[Live grep] "),
         buffers = make_picker_opts("[Buffers] "),
         keymaps = make_picker_opts("[Keymaps] "),
         oldfiles = make_picker_opts("[Oldfiles] "),
         git_files = make_picker_opts("[Git files] "),
-      },
-    },
+      }
+    end,
   },
 }

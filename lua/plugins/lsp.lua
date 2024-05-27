@@ -7,7 +7,7 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      -- inlay_hints = true,
+      inlay_hints = { enabled = false },
       servers = {
         omnisharp = {},
         pyright = {},
@@ -18,6 +18,7 @@ return {
         tailwindcss = {},
         astro = {},
         ocamllsp = {},
+        zls = {},
       },
     },
   },
@@ -28,13 +29,13 @@ return {
   --               LSP Diagnostic Text               |
   -- -------------------------------------------------
 
-  -- {
-  --   "dgagn/diagflow.nvim",
-  --   event = "LspAttach",
-  --   opts = {
-  --     format = function(diagnostic)
-  --       return "[LSP] " .. diagnostic.message
-  --     end,
-  --   },
-  -- },
+  {
+    "dgagn/diagflow.nvim",
+    event = "LspAttach",
+    opts = {
+      format = function(diagnostic)
+        return "[LSP] " .. diagnostic.message
+      end,
+    },
+  },
 }

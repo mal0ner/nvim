@@ -16,20 +16,26 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  opts = {
-    workspaces = {
+  opts = function(_, opts)
+    -- workspaces
+    opts.workspaces = {
       {
         name = "home",
         path = "~/Documents/notes/",
       },
-    },
-    daily_notes = {
+    }
+
+    -- dailies
+    opts.daily_notes = {
       folder = "05-daily",
-    },
-    picker = {
+    }
+    -- telescope picker
+    opts.picker = {
       name = "telescope.nvim",
-    },
-    note_id_func = function(title)
+    }
+
+    -- note creation naming rules
+    opts.note_id_func = function(title)
       -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
       -- In this case a note with the title 'My new note' will be given an ID that looks
       -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
@@ -44,12 +50,13 @@ return {
         end
       end
       return tostring(os.time()) .. "-" .. suffix
-    end,
-    ---@param url string
-    follow_url_func = function(url)
+    end
+
+    -- link following
+    opts.follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })
-    end,
-  },
+    end
+  end,
   keys = {
     {
       "<leader>nf",

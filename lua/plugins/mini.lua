@@ -1,24 +1,36 @@
-local indent_scope = require("mini.indentscope")
-
 return {
+  -- {
+  --   "echasnovski/mini.tabline",
+  --   event = "UIEnter",
+  --   version = false,
+  --   -- dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   opts = {
+  --     show_icons = false,
+  --   },
+  -- },
   {
-    "echasnovski/mini.indentscope",
-    event = "VeryLazy",
+    "echasnovski/mini.files",
     opts = {
-      draw = {
-        delay = 0,
-        animation = indent_scope.gen_animation.none(),
-      },
-      symbol = "╎",
+      options = { use_as_default_explorer = true },
+      windows = { preview = false },
     },
-  },
-  {
-    "echasnovski/mini.tabline",
-    event = "UIEnter",
-    version = false,
-    -- dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      show_icons = false,
-    },
+    keys = function()
+      return {
+        {
+          "<leader>e",
+          function()
+            require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+          end,
+          desc = "Open mini.files (Directory of Current File)",
+        },
+        {
+          "<leader>E",
+          function()
+            require("mini.files").open(vim.uv.cwd(), true)
+          end,
+          desc = "Open mini.files (cwd)",
+        },
+      }
+    end,
   },
 }

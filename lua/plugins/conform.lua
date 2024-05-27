@@ -21,6 +21,7 @@ return {
         yaml = { "prettierd" },
         markdown = { "prettierd" },
         graphql = { "prettierd" },
+        ocaml = { "ocamlformat" },
       },
     },
   },

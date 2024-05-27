@@ -5,8 +5,9 @@ return {
   { "mini.comment", enabled = false },
   { "stevearc/dressing.nvim", enabled = false }, -- i like the standard input
   { "mini.surround", enabled = false },
-  { "bufferline.nvim", enabled = false },
-  { "indent-blankline.nvim", enabled = false },
+  -- { "bufferline.nvim", enabled = false },
+  -- { "indent-blankline.nvim", enabled = false },
+  { "neo-tree.nvim", enabled = false },
   -- { "L3MON4D3/LuaSnip", enabled = false },
   -- { "which-key.nvim", enabled = false },
 }

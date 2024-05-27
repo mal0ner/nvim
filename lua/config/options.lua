@@ -6,6 +6,7 @@ vim.g.netrw_winsize = 100
 
 vim.opt.scrolloff = 10
 
+vim.opt.background = "dark"
 -- if you want to set the val of opt.background
 -- dynamically based on time
 -- local currentHour = os.date("%H") -- Get the current hour (0-23)

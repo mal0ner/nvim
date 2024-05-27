@@ -4,12 +4,11 @@ return {
   -- -------------------------------------------------
   {
     "neo-tree.nvim",
-    opts = {
-      use_popups_for_input = false,
-      window = {
-        position = "right",
-        width = 40,
-      },
-    },
+    opts = function(_, opts)
+      opts.use_popups_for_input = false
+      -- window
+      opts.window.position = "right"
+      opts.window.width = 40
+    end,
   },
 }
