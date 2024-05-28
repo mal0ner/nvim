@@ -20,6 +20,11 @@ return {
         ocamllsp = {},
         zls = {},
       },
+      setup = {
+        rust_analyzer = function()
+          return true
+        end,
+      },
     },
   },
   -- -------------------------------------------------
