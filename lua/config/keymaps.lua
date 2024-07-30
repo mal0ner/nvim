@@ -33,11 +33,11 @@ local enabled = false
 local function toggle_diagnostics()
   enabled = not enabled
   if enabled then
-    vim.diagnostic.enable()
+    vim.diagnostic.enable(true)
     local util = require("lazyvim.util")
     util.info("Enabled diagnostics", { title = "Diagnostics" })
   else
-    vim.diagnostic.disable()
+    vim.diagnostic.enable(false)
     local util = require("lazyvim.util")
     util.warn("Disabled diagnostics", { title = "Diagnostics" })
   end

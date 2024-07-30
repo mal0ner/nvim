@@ -82,4 +82,4 @@ end
 
 vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
