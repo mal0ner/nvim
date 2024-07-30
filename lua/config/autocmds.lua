@@ -24,3 +24,17 @@
 --     )
 --   end,
 -- })
+
+-- when a split is opened, automatically turn on the winbar so that each one is
+-- labelled with its filename.
+vim.api.nvim_create_autocmd({ "WinEnter", "WinClosed" }, {
+  pattern = "*",
+  callback = function()
+    local split_count = #vim.api.nvim_tabpage_list_wins(0)
+    if split_count > 1 then
+      vim.opt.winbar = "%t"
+    else
+      vim.opt.winbar = ""
+    end
+  end,
+})

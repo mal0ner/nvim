@@ -1,9 +1,8 @@
 -- set up notes prefix
-local wk = require("which-key")
-wk.register({
-  n = { name = "notes" },
-}, { prefix = "<leader>" })
-
+-- local wk = require("which-key")
+-- wk.register({
+--   { "", group = "notes" },
+-- })
 return {
   -- -------------------------------------------------
   --               OBSIDIAN                          |

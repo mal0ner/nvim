@@ -256,7 +256,7 @@ return {
         -- stylua: ignore
         center = {
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = "󰞦", key = "r" },
-          { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " Config",          icon = "󰞦", key = "c" },
+          { action = [[lua LazyVim.pick.config_files()()]], desc = " Config",          icon = "󰞦", key = "c" },
           { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = "󰞦", key = "s" },
           { action = "qa",                                                       desc = " Quit",            icon = "󰞦", key = "q" },
         },
