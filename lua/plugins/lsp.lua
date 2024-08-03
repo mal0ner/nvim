@@ -19,6 +19,7 @@ return {
         astro = {},
         ocamllsp = {},
         zls = {},
+        gleam = {},
       },
       setup = {
         rust_analyzer = function()

@@ -82,4 +82,6 @@ end
 
 vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 
+-- LSP etc.
+vim.lsp.set_log_level("off")
 vim.diagnostic.enable(false)
