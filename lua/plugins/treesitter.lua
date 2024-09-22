@@ -12,6 +12,7 @@ return {
         vim.list_extend(opts.ensure_installed, { "typescript" })
         vim.list_extend(opts.ensure_installed, { "astro" })
         vim.list_extend(opts.ensure_installed, { "ocaml" })
+        vim.list_extend(opts.ensure_installed, { "nix" })
       end
       opts.incremental_selection.keymaps.init_selection = "<CR>"
       opts.incremental_selection.keymaps.node_incremental = "<CR>"

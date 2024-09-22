@@ -1,13 +1,4 @@
 return {
-  -- {
-  --   "echasnovski/mini.tabline",
-  --   event = "UIEnter",
-  --   version = false,
-  --   -- dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   opts = {
-  --     show_icons = false,
-  --   },
-  -- },
   {
     "echasnovski/mini.files",
     opts = {

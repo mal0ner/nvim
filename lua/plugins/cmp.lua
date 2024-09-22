@@ -27,6 +27,11 @@ return {
         view = {
           entries = { follow_cursor = true },
         },
+        snippet = {
+          expand = function(item)
+            return LazyVim.cmp.expand(item.body)
+          end,
+        },
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Set `select` to `false` to only confirm explicitly selected items.
           ["<C-n>"] = function(fallback)
@@ -53,6 +58,7 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "path" },
+          { name = "snippets" },
         }),
         -- sort the cmp menu options based on a number of metrics in this order of priority
         -- source: https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
