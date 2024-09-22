@@ -20,6 +20,7 @@ return {
         ocamllsp = {},
         zls = {},
         gleam = {},
+        nil_ls = {},
       },
       setup = {
         rust_analyzer = function()
